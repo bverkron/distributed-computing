@@ -7,6 +7,7 @@ When running a host for a distributed computing platform such as FluidStack or Q
 This is a side project to investigate the security aspects of being a host for a distributed computing platform and experiment with ways to improve it from the host perspective without interfering with the operation of it. We will focus primarily on Ubuntu and Docker as those the most common requirements at the time of this writing.
 
 # Terms
+* **Distributed Computing Platform**: The software system used by companies like FluidStack and QBlocks to fasciliate [distributed computing](https://en.wikipedia.org/wiki/Distributed_computing) for their customers.
 * **Distributed Computing Host (aka host)**: The machine that you are using to host a [node](https://en.wikipedia.org/wiki/Node_(networking)#Distributed_systems) for the distributed computing platform.
 
 # Network Security
