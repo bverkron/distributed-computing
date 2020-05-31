@@ -1,4 +1,4 @@
-# Precursor / Disclaimer
+# Precursor
 
 When running a host for a distributed computing platform such as FluidStack on your machine you should assume there are zero steps taken by the provider to protect you or your system. Any such software / install should be assumed to be a security risk. As such you should ensure there is no sensitive / private information on your host machine and ideally have it totally isolated from your network (LAN blocked w/WAN only access).
 
