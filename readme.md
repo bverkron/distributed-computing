@@ -1,6 +1,6 @@
 # Precursor
 
-When running a [node](https://en.wikipedia.org/wiki/Node_(networking)#Distributed_systems) (aka host) for a distributed computing](https://en.wikipedia.org/wiki/Distributed_computing) platform such as FluidStack on your machine you should assume there are zero steps taken by the provider to protect you or your system. Any such software should be assumed to be a security risk. Statments such as the following from the FAQ highlight the lack of restrictions on the user side. 
+When running a [node](https://en.wikipedia.org/wiki/Node_(networking)#Distributed_systems) (aka host) for a distributed computing](https://en.wikipedia.org/wiki/Distributed_computing) platform such as FluidStack on your machine you should assume there are zero steps taken by the provider to protect you or your system. Any such software should be assumed to be a security risk. Statements such as the following from the FAQ highlight the lack of restrictions on the platform's user side. 
 
 * "[What can I use FluidStack's machines for?: Anything you like.](https://intercom.help/fluidstack/en/articles/3780947-what-can-i-use-fluidstack-s-machines-for)"
 * "[What images can I use?: You can use any Docker image, including ones you package yourself as well as ones available publicly.](https://intercom.help/fluidstack/en/articles/3779227-what-images-can-i-use)"
