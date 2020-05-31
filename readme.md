@@ -72,6 +72,8 @@ Docker containers are run by default as the `root` user. That will only change i
 To mitigate this we can enable the `userns-remap` setting in Docker to force all containers to run as a non-root user. Leaving it as `"default"` will make docker create a non-root user for you but you can also map it to a user of your choice. See the [official doc](https://docs.docker.com/engine/security/userns-remap/#enable-userns-remap-on-the-daemon) for more details and instructions on how to verify the user was created.
 
 Additionally we can enable the `no-new-privileges` setting to prevent the containers from using various forms of privilege escalation. Details here https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/ and here https://www.projectatomic.io/blog/2016/03/no-new-privs-docker/
+
+Example of the `/etc/docker/daemon.json` file with the security settings enabled. The `runtimes` section was already present after a FluidStack host installation and was left untouched. Don't forget to restart docker after making the changes with `service docker restart`
 ```
 {
     "userns-remap": "default",
