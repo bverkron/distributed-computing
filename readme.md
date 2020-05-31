@@ -32,7 +32,7 @@ iptables -I INPUT -m iprange --src-range 192.168.1.2-192.168.1.254 -j REJECT
 
 That won't persist across reboots so you'd have to use `iptables-persistent` or another method to make it persist.
 
-I chose a custom service to do this on boot because I didn't like the way `iptables-persistent` and some other options do a full dump / restore each time which means you need to remember to re-run those methods when you modify iptables, etc. I wanted it to be additive so my custom rules just got added to whatever is already configured in iptables at any given time.
+I chose a custom service to do this on boot because I didn't like the way `iptables-persistent` and some other options use a full dump / restore method meaning you need to remember to re-run the dump portion when you modify iptables, etc. I wanted it to be additive so my custom rules just got added to whatever is already configured in iptables at any given time.
 
 This should be loaded up before the network components of the OS start up do to the `WantedBy` line.
 
