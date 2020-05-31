@@ -65,8 +65,6 @@ systemctl enable lan-block.service
 # Docker Security
 
 ## Overview
-Distributed computing platforms typically use default settings and put little to no effort into enhancing security for the host system.
-
 Docker containers are run by default as the `root` user which puts our host at risk. That will only change if the docker images themselves have been built to create / use a different user within the image / container or use the `-u` flag when executing the `docker run` command. Thus far I have not see either of these be the case with these distributed platforms and we must assume that this will *not* be the case when our host gets assigned work and a container is started.
 
 ## Preventing Privilege Escalation
