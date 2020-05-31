@@ -9,7 +9,7 @@ As such you should ensure there is no sensitive / private information on your ho
 
 # Intent
 
-This is a side project to investigate the security aspects of being a host for a distributed computing platform and experiment with ways to improve it from the host perspective without interfering with the operation of it. We will focus primarily on Ubuntu and Docker as those the most common requirements at the time of this writing.
+This is a side project to investigate the security aspects of being a host for a distributed computing platform and experiment with ways to improve it from the host perspective. We will focus primarily on Ubuntu and Docker as those the most common requirements at the time of this writing.
 
 
 # Network Security
