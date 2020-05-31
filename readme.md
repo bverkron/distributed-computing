@@ -14,7 +14,7 @@ This is a side project to investigate the security aspects of being a host for a
 First and foremost you should make sure that your host is not able to communicate with other LAN devices, much like you would with [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things). Such devices can pose security risks and allow attackers to access devices within your network that contain sensitive information.
 
 ## Scenario #1 - Single boot host
-If you only have a single OS on your host system (the one used to run the distributed computing node) then you should block LAN access at the router level. This varies greatly by router manufacturer so check the docs for your router or other networking gear.
+If you only have a single OS on your host system (the one used to run the distributed computing node) then you should block LAN access at the router level. This varies greatly by router manufacturer / firmware so check the docs for your router or other networking gear.
 
 ## Scenario #2 - Dual boot host
 
