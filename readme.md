@@ -61,15 +61,14 @@ systemctl enable lan-block.service
 
 # Docker Security
 
-### Resources:
-* https://www.digitalocean.com/community/tutorials/how-to-audit-docker-host-security-with-docker-bench-for-security-on-ubuntu-16-04
-* https://snyk.io/blog/10-docker-image-security-best-practices/
-
+## Overview
 Distributed computing platforms typically use default settings and put little to no effort into enhancing security for the host system.
 
-Docker containers are run by default as the `root` user. That will only change if the docker images themselves have been built to create / use a different user within the image / container or use the `-u` flag when executing the `docker run` command. Thus far I have not see either of these be the case with these distributed platforms and we must assume that this will *not* be the case when our host gets assigned work and a container is started.
+Docker containers are run by default as the `root` user which puts our host at risk. That will only change if the docker images themselves have been built to create / use a different user within the image / container or use the `-u` flag when executing the `docker run` command. Thus far I have not see either of these be the case with these distributed platforms and we must assume that this will *not* be the case when our host gets assigned work and a container is started.
 
-To mitigate this we can enable the `userns-remap` setting in Docker to force all containers to run as a non-root user. Leaving it as `"default"` will make docker create a non-root user for you but you can also map it to a user of your choice. See the [official doc](https://docs.docker.com/engine/security/userns-remap/#enable-userns-remap-on-the-daemon) for more details and instructions on how to verify the user was created.
+## Preventing Privilege Escalation
+
+To mitigate the chance of [privilege escalation](https://en.wikipedia.org/wiki/Privilege_escalation) or other risks to the host we can enable the `userns-remap` setting in Docker to force all containers to run as a non-root user. Leaving it as `"default"` will make docker create a non-root user for you but you can also map it to a user of your choice. See the [official doc](https://docs.docker.com/engine/security/userns-remap/#enable-userns-remap-on-the-daemon) for more details and instructions on how to verify the user was created.
 
 Additionally we can enable the `no-new-privileges` setting to prevent the containers from using various forms of privilege escalation. Details here https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/ and here https://www.projectatomic.io/blog/2016/03/no-new-privs-docker/
 
@@ -88,3 +87,7 @@ Docker config files (`/etc/docker/daemon.json`) with the security settings enabl
 
 }
 ```
+
+### Additional Resources and Security Settings
+* https://www.digitalocean.com/community/tutorials/how-to-audit-docker-host-security-with-docker-bench-for-security-on-ubuntu-16-04
+* https://snyk.io/blog/10-docker-image-security-best-practices/
