@@ -73,7 +73,8 @@ To mitigate this we can enable the `userns-remap` setting in Docker to force all
 
 Additionally we can enable the `no-new-privileges` setting to prevent the containers from using various forms of privilege escalation. Details here https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/ and here https://www.projectatomic.io/blog/2016/03/no-new-privs-docker/
 
-Example of the `/etc/docker/daemon.json` file with the security settings enabled. The `runtimes` section was already present after a FluidStack host installation and was left untouched. Don't forget to restart docker after making the changes with `service docker restart`
+**Example** 
+Docker config files (`/etc/docker/daemon.json`) with the security settings enabled. The `runtimes` section was already present after a FluidStack host installation and was left untouched. Don't forget to restart docker after making the changes with `service docker restart`
 ```
 {
     "userns-remap": "default",
